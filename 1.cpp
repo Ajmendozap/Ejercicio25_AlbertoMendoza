@@ -3,11 +3,11 @@
 
 void relleno(int *a,int numero);
 int imprimir(int *a,int numero);
-
+// Este código imprime un arreglo de factoriales para un número solicitado.
 int main(void)
 {
     int numero;
-    std::cout<<"Ingrese el número"<<std::endl;
+    std::cout<<"Ingrese el número para calcular el arreglo de factoriales"<<std::endl;
     std::cin>>numero;
     int* m= new int [numero];
     relleno(m,numero);
@@ -27,14 +27,28 @@ void relleno(int *a, int numero)
         }
         a[i]=m;
     }
+    a[0]=1;
 }
 
 int imprimir(int *a,int numero)
 {
-    std::cout<<"El arreglo de factoriales es:";
+    std::cout<<"El arreglo de factoriales es: "<<std::endl;
     for(int i=0;i<numero;i++)
     {
-        std::cout<<a[i]<<std::endl;
+		if(i==0)
+		{
+			std::cout<<'[';
+		}
+        std::cout<<a[i];
+		if (i<numero-1)
+		{
+			std::cout<<','<<' ';
+		}
+		else 
+		{
+			std::cout<<']';
+		}
             
     }
+	std::cout<<std::endl;
 }
